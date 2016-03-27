@@ -1,4 +1,5 @@
 [
   "hubot-diagnostics",
-  "orchestrate-brain"
+  "hubot-heroku-keepalive",
+  "orchestrate-brain"  
 ]
