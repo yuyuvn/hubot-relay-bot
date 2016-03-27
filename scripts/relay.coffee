@@ -7,7 +7,7 @@
 
 module.exports = (robot) ->
 
-  robot.hear /(^.+$)/, (msg) ->
+  robot.respond /([^]+)/, (msg) ->
     msg.send "Relay Error! Please set your RELAY_URL\
       \nEx: export RELAY_URL='http://your_domain_or_ip:8080/hubot/relay'" if !process.env.RELAY_URL
     data = JSON.stringify({msg: msg.match[1]})
