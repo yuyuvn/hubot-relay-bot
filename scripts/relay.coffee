@@ -3,6 +3,7 @@
 #
 # Notes:
 #   export RELAY_RESPONSE=true if you want it answer after relay
+#   export RELAY_EVERYTHING=true if you want it relay everything
 #
 
 module.exports = (robot) ->
@@ -12,6 +13,7 @@ module.exports = (robot) ->
     if matches != null && matches.length > 1
       message = matches[1]
     else
+      return if !process.env.RELAY_EVERYTHING
       message = msg.message.text
 
     message = if robot.adapter.removeFormatting then robot.adapter.removeFormatting(message) else message
